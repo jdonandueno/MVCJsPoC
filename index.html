@@ -1,61 +1,119 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS MVC POC</title>
-    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  </head>
-  <body>
-    
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">JavaScript Frameworks POC</li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#comparison">Comparison</a></li>
-          <li><a href="#benchmarks">Benchmarks</a></li>
-          <li><a href="#alternatives">Alternatives</a></li>
-          <li><a href="#examples">Code Examples</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End Top Bar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript POC</title>
 
-    <div class="callout large primary">
-      <div class="row column text-center">
-        <h1>JS MVC Frameworks 2.0</h1>
-      </div>
-    </div>
-    
-    <div class="row" id="content">
-      <div class="medium-8 columns">
-        <h3>Why MVC in the FrontEnd?</h1>
-      </div>
-      <div class="medium-2 columns" data-sticky-container>
-        <div class="sticky" data-sticky data-anchor="content">
-          <h4>Sections</h4>
-           <ul>
-            <li><a href="#comparison">Comparison</a></li>
-            <li><a href="#benchmarks">Benchmarks</a></li>
-            <li><a href="#alternatives">Alternatives</a></li>
-            <li><a href="#examples">Code Examples</a></li>
-          </ul>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/round-about.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">JS MVC POC</a>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Javascript MVC Frameworks
+                    <small>Because UI Development can be awesome too!</small>
+                </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#angular"><img class="img-circle img-responsive img-center" 
+                src="/img/AngularImage.png" alt="Angular"></a>
+                <h3>Angular (1)
+                    <small>MVC</small>
+                </h3>
+                <p>The google guys couldn't be wrong! ...Right?</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#aurelia"><img class="img-circle img-responsive img-center" 
+                src="/img/aurelia-logo.png" alt="Aurelia"></a>
+                <h3>Aurelia
+                    <small>MV* Conventions</small>
+                </h3>
+                <p>Native ES6 support! Wait... are all browsers compatible? Meh, nevermind</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                 <a href="#backbone"><img class="img-circle img-responsive img-center" 
+                src="/img/backbone.png" alt="Backbone"></a>
+                <h3>Backbone
+                    <small>M/V data binding</small>
+                </h3>
+                <p>Adaptable and easy! Some things out of the box, some others... well, do them yourself :)</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#ember"><img class="img-circle img-responsive img-center" 
+                src="/img/ember.png" alt="Ember"></a>
+                <h3>Ember
+                    <small>MVC</small>
+                </h3>
+                <p>We're just like Angular, so you can cry on our shoulder when the google guys start with ng-2.0</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#knockout"><img class="img-circle img-responsive img-center" 
+                src="/img/knockout.jpg" alt="Knockout"></a>
+                <h3>Knockout
+                    <small>MVVM</small>
+                </h3>
+                <p>We LOVED MVVM, so we made a different implementation ourselves :D</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#polymer"><img class="img-circle img-responsive img-center" 
+                src="/img/polymerlogo.png" alt="Polymer"></a>
+                <h3>Polymer
+                    <small>Web Components made easy</small>
+                </h3>
+                <p>Plain directive creation, because what else do you need?!</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#react"><img class="img-circle img-responsive img-center" 
+                src="/img/react.png" alt="React"></a>
+                <h3>React
+                    <small>Component-based rendering</small>
+                </h3>
+                <p>Why did Facebook develop this, again?</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#riot"><img class="img-circle img-responsive img-center" 
+                src="/img/riotlogo.png" alt="Riot"></a>
+                <h3>Riot
+                    <small>Lightweight framework similar to React</small>
+                </h3>
+                <p>Because nothing says "professional" more than minimalism</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="#vue"><img class="img-circle img-responsive img-center" 
+                src="/img/Vue.png" alt="Vue"></a>
+                <h3>Vue
+                    <small>Modular Framework (Only for view)</small>
+                </h3>
+                <p>The future is now! Or is it just another marketing stategy?</p>
+            </div>
+        </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
 </html>
-
-
-
