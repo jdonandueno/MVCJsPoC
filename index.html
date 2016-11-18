@@ -23,7 +23,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Javascript POC</a>
+                <a class="navbar-brand" href="/">Javascript POC</a>
             </div>
         </div>
     </nav>
@@ -39,7 +39,7 @@
 
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center">
-                <a href="#angular"><img class="img-circle img-responsive img-center" 
+                <a href="/frameworks/angular"><img class="img-circle img-responsive img-center" 
                 src="/img/AngularImage.png" alt="Angular"></a>
                 <h3>Angular (1)
                     <small>MVC</small>
@@ -113,10 +113,10 @@
             </div>
         </div>
 
-        <h3>MVC Comparison</h2>
+        <h2>MVC Comparison</h2>
         <table class="table">
             <colgroup>
-                <col class="first-col"></col>
+                <col></col>
                 <col span="4"></col>
             </colgroup>
             <thead>
@@ -150,11 +150,11 @@
             </tbody>
         </table>
 
-        <h3>Other alternatives</h2>
+        <h2>Other alternatives</h2>
         <table class="table">
             <colgroup>
-                <col class="first-col"></col>
-                <col span="4"></col>
+                <col></col>
+                <col span="5"></col>
             </colgroup>
             <thead>
                 <tr>
@@ -173,27 +173,42 @@
                     <td>M/V data binding</td>
                     <td>MVVM</td>
                     <td>Web Components made easy</td>
+                    <td>Modular Framework</td>
                 </tr>
                 <tr>
                     <td>Pros</td>
                     <td>
-                        Highly complex runtime, scope debugging is difficult and very steep learning curve
+                        ES6 native compatibility, modular and standalone, compatible with Flux
                     </td>
-                    <td>Small community, difficult to develop outside of its comfort zone</td>
-                    <td>Verbose and not a full framework (no router, or model management)</td>
                     <td>
-                        Performance issues are often overcome by the size of the framework, but has room for improvement
+                        Fast, lightweight framework, for building small solutions, lots of integrated functionality out of the box
+                    </td>
+                    <td>
+                        Highly compatible with 3rd party JS libraries, easy to use, and data binding is lighter thanks to its core structure
+                    </td>
+                    <td>
+                        Relies on native browser compatibility, rather than external JS libraries, maintains a separated view design from functionality
+                    </td>
+                    <td>
+                        Virutal DOM rendering, with higher performance on data bindings, lightweight, 
                     </td>
                 </tr>
                 <tr>
                     <td>Cons</td>
                     <td>
-                        Highly complex runtime, scope debugging is difficult and very steep learning curve
+                        Performance leaves some room to improvement, bundling is non-standard and often mishandled
                     </td>
-                    <td>Small community, difficult to develop outside of its comfort zone</td>
-                    <td>Verbose and not a full framework (no router, or model management)</td>
                     <td>
-                        Performance issues are often overcome by the size of the framework, but has room for improvement
+                        Debugging is extensive and complicated, longer development time and understanding of core library
+                    </td>
+                    <td>
+                        Difficult to organize in larger aplications, dependency errors are prone to happen, lack of server side rendering, and download time of polyfills
+                    </td>
+                    <td>
+                        Data binding is made possible by functiones instead of simple objects, HTML views can get messy on increasing complexity, does not provide routing
+                    </td>
+                    <td>
+                        Slightly new framework, with a lot of documentation and marketing, but few actual developers &amp; productive applications using it
                     </td>
                 </tr>
             </tbody>

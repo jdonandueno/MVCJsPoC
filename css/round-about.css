@@ -21,4 +21,5 @@ col:first-child {
     text-align: right;
     font-weight: bolder;
     font-size: 16pt;
+    vertical-align: middle;
 }
