@@ -11,3 +11,14 @@ body {
 footer {
     margin: 50px 0;
 }
+
+col:first-child {
+    background-color: #ddd;
+    width: 10%;
+}
+
+.table tbody tr td:first-child {
+    text-align: right;
+    font-weight: bolder;
+    font-size: 16pt;
+}
