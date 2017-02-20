@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular</title>
+    <title>Vue</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -30,39 +30,24 @@
 
     <div class="container">
     <h2>Code example</h2>
-    <h3>HelloWorld.js</h3>
+    <h3>app.js</h3>
         <pre>
-    var app = angular.module('myapp', []);
-
-    app.controller('helloWorldController', function($scope) {
-        $scope.message = "Hello World";
-    });
-
-    app.directive('helloWorld', function() {
-      return {
-        restrict: 'E',
-        replace: true,
-        controller: 'helloWorldController',
-        template: '&lt;p style="background-color:{{color}}"&gt;{{message}}&lt;/p&gt;',
-        link: function(scope, elem, attrs) {
-          elem.bind('click', function() {
-            elem.css('background-color', 'white');
-            scope.$apply(function() {
-              scope.color = "white";
-            });
-          });
-          elem.bind('mouseover', function() {
-            elem.css('cursor', 'pointer');
-          });
-        }
-      };
-    });
+    new Vue({
+       el: "#hello-world-app",
+       data() {
+         return {
+           msg: "Hello World!"
+         }
+       }
+     });
         </pre>
 
     <h3>index.html</h3>
     <pre>
-    &lt;body ng-app="myapp"&gt;
-      &lt;input type="text" ng-model="color" placeholder="Enter a color" /&gt;
+    &lt;body&gt;
+      &lt;div id="hello-world-app"&gt;
+        &lt;h1&gt;{{ msg}}&lt;/h1&gt;
+      &lt;div/&gt;
       &lt;hello-world/&gt;
     &lt;/body>
     </pre>

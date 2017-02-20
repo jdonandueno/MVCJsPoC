@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular</title>
+    <title>Riot</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +20,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -29,41 +31,29 @@
     </nav>
 
     <div class="container">
-    <h2>Code example</h2>
-    <h3>HelloWorld.js</h3>
+        <h1>Riot</h1>
+        <h2>Code example</h2>
+        <h3>hello-world.tag</h3>
         <pre>
-    var app = angular.module('myapp', []);
+    &lt;hello-world&gt;
+     &lt;h3&gt;{message}&lt;/h3&gt;
 
-    app.controller('helloWorldController', function($scope) {
-        $scope.message = "Hello World";
-    });
-
-    app.directive('helloWorld', function() {
-      return {
-        restrict: 'E',
-        replace: true,
-        controller: 'helloWorldController',
-        template: '&lt;p style="background-color:{{color}}"&gt;{{message}}&lt;/p&gt;',
-        link: function(scope, elem, attrs) {
-          elem.bind('click', function() {
-            elem.css('background-color', 'white');
-            scope.$apply(function() {
-              scope.color = "white";
-            });
-          });
-          elem.bind('mouseover', function() {
-            elem.css('cursor', 'pointer');
-          });
-        }
-      };
-    });
+     this.message = 'Hello World!!!';
+    &lt;/hello-world&gt;
         </pre>
 
-    <h3>index.html</h3>
-    <pre>
+        <h3>index.html</h3>
+        <pre>
     &lt;body ng-app="myapp"&gt;
-      &lt;input type="text" ng-model="color" placeholder="Enter a color" /&gt;
+      &lt;hello-world&gt;
       &lt;hello-world/&gt;
+
+      &lt;script src="./hello-world.tag" type="riot/tag"&gt;&lt;/script&gt;
+
+     &lt;!-- include riot.js and the compiler --&gt;
+     &lt;script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"&gt;&lt;/script&gt;
+
+     &lt;script&gt; riot.mount('*') &lt;/script&gt;
     &lt;/body>
     </pre>
     </div>

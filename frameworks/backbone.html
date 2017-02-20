@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular</title>
+    <title>Backbone</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -29,41 +29,34 @@
     </nav>
 
     <div class="container">
+      <h1>Backbone</h1>
     <h2>Code example</h2>
-    <h3>HelloWorld.js</h3>
+
+    <p>
+      Please note, that since Backbone.js doesn't provide a templating system, this is achieved through <a href="http://underscorejs.org/">underscore.js</a>
+    </p>
+
+    <h3>app.js</h3>
         <pre>
-    var app = angular.module('myapp', []);
-
-    app.controller('helloWorldController', function($scope) {
-        $scope.message = "Hello World";
-    });
-
-    app.directive('helloWorld', function() {
-      return {
-        restrict: 'E',
-        replace: true,
-        controller: 'helloWorldController',
-        template: '&lt;p style="background-color:{{color}}"&gt;{{message}}&lt;/p&gt;',
-        link: function(scope, elem, attrs) {
-          elem.bind('click', function() {
-            elem.css('background-color', 'white');
-            scope.$apply(function() {
-              scope.color = "white";
-            });
-          });
-          elem.bind('mouseover', function() {
-            elem.css('cursor', 'pointer');
-          });
-        }
-      };
-    });
+  var AppView = Backbone.View.extend({
+    el: $('#container'),
+    template: _.template("&lt;h3&gt;Hello &lt;= who %&gt;&lt;/h3&gt;"),
+    initialize: function(){
+      this.render();
+    },
+    render: function(){
+      this.$el.html(this.template({who: 'world!'}));
+    }
+  });
+  var appView = new AppView();
         </pre>
 
     <h3>index.html</h3>
     <pre>
-    &lt;body ng-app="myapp"&gt;
-      &lt;input type="text" ng-model="color" placeholder="Enter a color" /&gt;
-      &lt;hello-world/&gt;
+    &lt;body&gt;
+      &lt;div id="container"&gt;
+        Loading...
+      &lt;/div&gt;
     &lt;/body>
     </pre>
     </div>

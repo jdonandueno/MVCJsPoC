@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular</title>
+    <title>Knockout</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -29,42 +29,29 @@
     </nav>
 
     <div class="container">
+    <h1>Knockout</h1>
     <h2>Code example</h2>
     <h3>HelloWorld.js</h3>
         <pre>
-    var app = angular.module('myapp', []);
+    var ViewModel = function(first, last) {
+        this.firstName = ko.observable(first);
+        this.lastName = ko.observable(last);
 
-    app.controller('helloWorldController', function($scope) {
-        $scope.message = "Hello World";
-    });
+        this.fullName = ko.computed(function() {
+            return this.firstName() + " " + this.lastName();
+        }, this);
+    };
 
-    app.directive('helloWorld', function() {
-      return {
-        restrict: 'E',
-        replace: true,
-        controller: 'helloWorldController',
-        template: '&lt;p style="background-color:{{color}}"&gt;{{message}}&lt;/p&gt;',
-        link: function(scope, elem, attrs) {
-          elem.bind('click', function() {
-            elem.css('background-color', 'white');
-            scope.$apply(function() {
-              scope.color = "white";
-            });
-          });
-          elem.bind('mouseover', function() {
-            elem.css('cursor', 'pointer');
-          });
-        }
-      };
-    });
+    ko.applyBindings(new ViewModel("Planet", "Earth"));
         </pre>
 
     <h3>index.html</h3>
     <pre>
-    &lt;body ng-app="myapp"&gt;
-      &lt;input type="text" ng-model="color" placeholder="Enter a color" /&gt;
-      &lt;hello-world/&gt;
-    &lt;/body>
+      &lt;div class='liveExample'&gt;
+        &lt;p&gt;First name: &lt;input data-bind='value: firstName' /&gt;&lt;/p&gt;
+        &lt;p&gt;Last name: &lt;input data-bind='value: lastName' /&gt;&lt;/p&gt;
+        &lt;h2&gt;Hello, &lt;span data-bind='text: fullName'&gt; &lt;/span&gt;!&lt;/h2&gt;
+      &lt;/div&gt;
     </pre>
     </div>
     <script src="../js/jquery.js"></script>
