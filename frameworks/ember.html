@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -29,7 +31,52 @@
     </nav>
 
     <div class="container">
-    <h1>PENDING</h1>
+        <h1>Ember (with Handlebars)</h1>
+        <h2>Code example</h2>
+        <h3>app.js</h3>
+        <pre>
+    window.App = Ember.Application.create();
+
+    function btnTest_OnClick() {
+        App.userController.changeModel();
+    }
+
+    $(document).ready(function() {
+
+        App.Person = Ember.Object.extend({
+            id: 0,
+            name: ""
+        });
+
+        var person = App.Person.create();
+        person.name = "Duncan";
+        person.id = 0;
+
+        App.userController = Ember.Object.create({
+            content: person,
+            changeModel: function () {
+                this.content.set('name', 'Joe');
+            }
+        });
+
+         App.UserView = Ember.View.extend({
+            nameBinding: 'App.userController.content.name'
+        });
+
+   });
+        </pre>
+
+        <h3>index.html</h3>
+        <pre>
+    &lt;body&gt;
+      &lt;script type="text/x-handlebars"&gt;
+        {{#view App.UserView }}
+        &lt;b&gt;Name:&lt;/b&gt; {{name}}
+        {{/view}}
+      &lt;/script&gt;
+      &lt;button onclick="btnTest_OnClick()" id="btnTest"&gt;Click me to change&lt;/button&gt;
+    &lt;/body>
+    </pre>
     </div>
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
